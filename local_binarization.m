@@ -65,7 +65,7 @@ for i = 1:Xsize
       for j = 1:Ysize
 
                  mean = meanLT(i,j,15,riceImage2,Xsize,Ysize);
-                 T = mean*(1-k*((stddevLT(i,j,15,riceImage2,mean,Xsize,Ysize)/R)-1));
+                 T = mean*(1-k*((stddev(i,j,15,riceImage2,mean,Xsize,Ysize)/R)-1));
                  if(riceImage2(i,j) > T)
                      riceCopy2(i,j) = 255;
                  else
@@ -90,7 +90,7 @@ for i = 1:Xsize2
       for j = 1:Ysize2
 
                  mean2 = meanLT(i,j,15,catalogue2,Xsize2,Ysize2);
-                 T = mean2*(1+k*((stddevLT(i,j,15,catalogue2,mean2,Xsize2,Ysize2)/R)-1));
+                 T = mean2*(1+k*((stddev(i,j,15,catalogue2,mean2,Xsize2,Ysize2)/R)-1));
                  if(catalogue2(i,j) > T)
                      catalogueCopy2(i,j) = 255;
                  else
